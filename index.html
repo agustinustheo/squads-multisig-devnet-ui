@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squads Multisig - Solana Multi-Signature Wallet</title>
+    <meta name="description" content="Secure multi-signature wallet management on Solana using Squads Protocol V4" />
+    <meta name="author" content="Squads Protocol" />
+
+    <meta property="og:title" content="Squads Multisig - Solana Multi-Signature Wallet" />
+    <meta property="og:description" content="Secure multi-signature wallet management on Solana using Squads Protocol V4" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Inject Buffer polyfill before any modules load -->
+    <script>
+      // Early Buffer polyfill injection
+      (function() {
+        if (typeof globalThis.Buffer === 'undefined') {
+          // Define a basic Buffer shim that will be replaced by the full polyfill
+          globalThis.Buffer = { 
+            from: function() { return new Uint8Array(); },
+            alloc: function() { return new Uint8Array(); }
+          };
+        }
+        if (typeof globalThis.process === 'undefined') {
+          globalThis.process = { env: {}, browser: true };
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
